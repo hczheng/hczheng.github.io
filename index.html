@@ -14,6 +14,19 @@
 	<script type="text/javascript" src="js/garden.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
 </head>
+<script type="text/javascript">     
+function countDown(secs,surl){     
+ //alert(surl);     
+ var jumpTo = document.getElementById('jumpTo');
+ jumpTo.innerHTML=secs;  
+ if(--secs>0){     
+     setTimeout("countDown("+secs+",'"+surl+"')",1000);     
+     }     
+ else{       
+     location.href=surl;     
+     }     
+ }     
+</script> 
 
 <body>
 	<div id="mainDiv">
@@ -91,7 +104,6 @@
 			setTimeout(function () {
 				startHeartAnimation();
 			}, 5000);
-
 			timeElapse(together);
 			setInterval(function () {
 				timeElapse(together);
@@ -100,6 +112,8 @@
 			adjustCodePosition();
 			$("#code").typewriter();
 		}
-	</script>
+    </script>
+	<span id="jumpTo"></span>
+    <script type="text/javascript">countDown(80,'index_u.html');</script>  
 </body>
 </html>
