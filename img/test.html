@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <title>使用数组实现图片自动轮播</title> 
+  <style type="text/css">
+    #main{
+      width: 700px;
+      height: 450px;
+      margin: 0 auto;
+      text-align: center;
+    }
+  </style>
+  <script type="text/javascript"> 
+    var curIndex = 0; 
+    var timeInterval = 1000; 
+    var arr = new Array(); 
+    arr[0] = "1.jpg"; 
+    arr[1] = "2.jpg"; 
+    arr[2] = "3.jpg"; 
+    arr[3] = "4.jpg"; 
+    arr[4] = "5.jpg"; 
+    setInterval(changeImg,timeInterval); 
+    function changeImg() { 
+       var obj = document.getElementById("imge"); 
+       if (curIndex == arr.length-1) { 
+         curIndex = 0; 
+       } else { 
+         curIndex += 1; 
+       } 
+       obj.src = arr[curIndex]; 
+    } 
+  </script> 
+</head> 
+<body> 
+  <div id="main">
+      <h1>使用数组实现图片自动轮播</h1>
+      <img id = "imge" src = "1.png" alt="picture" /> 
+  </div>
+</body> 
+</html>
